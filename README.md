@@ -88,3 +88,30 @@ ai-teaching-skill/
 ## License
 
 MIT
+
+## 更新日志
+
+### v0.5.0 (2026-05-17)
+
+**结构调整**：
+- 添加 Prerequisites 部分（前置条件）
+- 添加 Inputs Required 部分（输入要求）
+- 添加 Verification Checklist 部分（验证清单）
+- 优化 When to Use / When NOT to Use 部分
+- 优化 Quality Standard 部分
+- 优化 Anti-Patterns 部分
+
+**内容优化**：
+- 使教学流程更加具体和可操作
+- 添加更多的示例和案例
+- 使验证方法更加明确
+- 使反面案例更加详细
+
+**语言策略**：
+- 采用中英文混合策略
+- 元数据英文，内容中文
+- 符合中文skill社区的惯例
+
+### v0.4.0 (2026-05-16)
+
+初始版本，包含完整的教学流程和方法论。
