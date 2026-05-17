@@ -159,6 +159,112 @@ In that case:
 
 ---
 
+## 📚 Skill Index
+
+| Feature | Status | Purpose | Trigger Keywords |
+|---------|--------|---------|------------------|
+| **Concept Teaching** | ✅ Stable | Teach concepts, theory, principles using metaphors and structured explanation | "explain", "teach me", "what is", "give me a lecture", "讲解", "解释", "教我" |
+| **Code Teaching** | ✅ Stable | Teach code, tools, projects using show-guess-confirm method | "what does this mean", "help me understand this code", "这段代码是什么意思", "帮我理解" |
+| **Deep Learning** | ✅ Stable | Full Five-Step Ladder for deep understanding of complex concepts | "deep understanding", "full derivation", "深入理解", "完整推导", "详细讲解" |
+| **Quick Explanation** | ✅ Stable | Light mode for quick, concise explanations | "quick explanation", "briefly explain", "简单说一下", "快速解释" |
+
+---
+
+## 🔍 Skill Details
+
+### Concept Teaching
+
+**What it does** — Teaches concepts, theory, and principles using a structured approach: metaphor first, then professional definition, then verification. Ensures students truly understand before moving forward.
+
+**Core rules enforced**
+
+| Domain | Core rule |
+|--------|-----------|
+| Metaphor first | Always start with a life analogy to build mental model |
+| One concept at a time | Never introduce multiple concepts in one exchange |
+| Verify understanding | Ask student to explain in their own words |
+| Connect to reality | Link concept to student's actual scenarios |
+
+**Example workflow**
+
+```
+User: "What is cointegration?"
+AI: [Uses metaphor: walking a dog]
+AI: [Provides professional definition]
+AI: [Asks verification question]
+AI: [Connects to student's project]
+```
+
+### Code Teaching
+
+**What it does** — Teaches code, tools, and projects using a show-guess-confirm method: show real code, have student guess meaning, confirm or correct, then hands-on practice.
+
+**Core rules enforced**
+
+| Domain | Core rule |
+|--------|-----------|
+| Real code first | Use student's own project code, not textbook examples |
+| Guess before explain | Have student guess meaning before explaining |
+| Hands-on practice | Always have student try themselves |
+| Progressive difficulty | Start simple, increase complexity gradually |
+
+**Example workflow**
+
+```
+User: "What does this CSS flex do?"
+AI: [Shows code from student's project]
+AI: "What do you think this line does?"
+AI: [Confirms or corrects student's guess]
+AI: "Try changing it to see what happens"
+```
+
+### Deep Learning
+
+**What it does** — Provides full Five-Step Ladder teaching for complex concepts: Anchor (metaphor) → Define (professional definition) → Derive (step-by-step derivation) → Example (real cases) → Compare (boundary analysis).
+
+**Core rules enforced**
+
+| Domain | Core rule |
+|--------|-----------|
+| Five-Step Ladder | Follow Anchor → Define → Derive → Example → Compare |
+| Zero jumps | Show every step in derivation, no magic formulas |
+| Symbol glossary | Explain every symbol in formulas |
+| At least 2 examples | One basic, one advanced case |
+
+**Example workflow**
+
+```
+User: "Explain Bayesian theorem in detail"
+AI: [Step 1: Metaphor - medical test]
+AI: [Step 2: Professional definition]
+AI: [Step 3: Full derivation with symbols]
+AI: [Step 4: Two examples]
+AI: [Step 5: Compare with frequentist approach]
+```
+
+### Quick Explanation
+
+**What it does** — Provides light, concise explanations for simple concepts or when user just needs a quick overview. Uses metaphor and one-sentence summary.
+
+**Core rules enforced**
+
+| Domain | Core rule |
+|--------|-----------|
+| One metaphor | Use one clear metaphor to explain |
+| One sentence summary | End with a clear takeaway |
+| No verification | Don't ask verification questions |
+| Keep it short | 2-3 paragraphs maximum |
+
+**Example workflow**
+
+```
+User: "Quickly explain what is API"
+AI: "API is like a waiter in a restaurant..."
+AI: "Remember: API is the bridge between different software."
+```
+
+---
+
 ## 📚 Core Design
 
 ### Three Iron Laws (Never Violate)
@@ -205,17 +311,6 @@ Verify (Really Understood?)
 - User explicitly says "just give me the answer"
 - Task is pure execution (write code, run commands), no understanding needed
 - User is L5 proficient developer, only needs specific API/parameter lookup
-
----
-
-## 🛠️ Skill Details
-
-| Feature | Trigger Keywords | Use Case | Status |
-|---------|-----------------|----------|--------|
-| Concept Teaching | "explain", "teach me" | Concepts, theory, principles | ✅ Stable |
-| Code Teaching | "what does this mean" | Code, tools, projects | ✅ Stable |
-| Deep Learning | "deep understanding" | Need full Five-Step Ladder | ✅ Stable |
-| Quick Explanation | "quick explanation" | Light mode | ✅ Stable |
 
 ---
 
