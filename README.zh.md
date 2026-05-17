@@ -3,9 +3,9 @@
 > **教 AI 如何把一个概念讲到用户真正理解。**
 > 不是"信息搬运"，是"搭建从不懂到懂的梯子"。
 
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/teaching-skill/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/teaching-skill.svg?style=social)](https://github.com/CallMe1101/teaching-skill/stargazers)
 
 [English](README.md) | [中文文档](README.zh.md)
 
@@ -31,10 +31,10 @@ Claude Code 可以直接使用这个技能作为本地技能。这是最简单�
 
 ```bash
 # 添加市场（一次性）
-/plugin marketplace add https://github.com/CallMe1101/ai-teaching-skill
+/plugin marketplace add https://github.com/CallMe1101/teaching-skill
 
 # 安装插件
-/plugin install ai-teaching-skill
+/plugin install teaching-skill
 
 # 重新加载以应用
 /reload-plugins
@@ -48,7 +48,7 @@ Claude Code 可以直接使用这个技能作为本地技能。这是最简单�
 
 ```bash
 mkdir -p ~/.claude/skills
-cp SKILL.md ~/.claude/skills/ai-teaching.md
+cp SKILL.md ~/.claude/skills/teaching.md
 ```
 
 然后打开新的 Claude Code 会话，自然地调用它：
@@ -69,22 +69,22 @@ Codex 可以直接使用这个技能作为本地技能。这是最简单的安�
 **克隆仓库**
 
 ```bash
-git clone https://github.com/CallMe1101/ai-teaching-skill.git
-cd ai-teaching-skill
+git clone https://github.com/CallMe1101/teaching-skill.git
+cd teaching-skill
 ```
 
 **安装技能**
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R . ~/.codex/skills/ai-teaching/
+cp -R . ~/.codex/skills/teaching/
 ```
 
 **更新后重新安装**
 
 ```bash
 git pull
-cp -R . ~/.codex/skills/ai-teaching/
+cp -R . ~/.codex/skills/teaching/
 ```
 
 **完成**
@@ -102,7 +102,7 @@ cp -R . ~/.codex/skills/ai-teaching/
 如果你的代理支持可重用的提示文件、系统提示或代理配置，最小可移植单元是技能目录本身：
 
 ```
-ai-teaching-skill/
+teaching-skill/
 ├── README.md
 ├── SKILL.md
 └── references/...
@@ -329,7 +329,7 @@ AI："记住：API是不同软件之间的桥梁。"
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=CallMe1101/ai-teaching-skill&type=Date)](https://star-history.com/#CallMe1101/ai-teaching-skill&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=CallMe1101/teaching-skill&type=Date)](https://star-history.com/#CallMe1101/teaching-skill&Date)
 
 ---
 

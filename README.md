@@ -3,9 +3,9 @@
 > **Teach AI how to explain concepts until users truly understand.**
 > Not "information dumping" — it's "building a ladder from confusion to clarity."
 
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/teaching-skill/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/teaching-skill.svg?style=social)](https://github.com/CallMe1101/teaching-skill/stargazers)
 
 [English](README.md) | [中文文档](README.zh.md)
 
@@ -31,10 +31,10 @@ This repository is published as a Claude Code plugin, making installation simple
 
 ```bash
 # Add the marketplace (one-time)
-/plugin marketplace add https://github.com/CallMe1101/ai-teaching-skill
+/plugin marketplace add https://github.com/CallMe1101/teaching-skill
 
 # Install the plugin
-/plugin install ai-teaching-skill
+/plugin install teaching-skill
 
 # Reload to apply
 /reload-plugins
@@ -48,7 +48,7 @@ If you prefer manual control, copy the SKILL.md file to your Claude skills direc
 
 ```bash
 mkdir -p ~/.claude/skills
-cp SKILL.md ~/.claude/skills/ai-teaching.md
+cp SKILL.md ~/.claude/skills/teaching.md
 ```
 
 Then open a new Claude Code session and invoke it naturally:
@@ -69,22 +69,22 @@ Codex can use this skill directly as a local skill. This is the simplest install
 **Clone the repo**
 
 ```bash
-git clone https://github.com/CallMe1101/ai-teaching-skill.git
-cd ai-teaching-skill
+git clone https://github.com/CallMe1101/teaching-skill.git
+cd teaching-skill
 ```
 
 **Install the skill**
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R . ~/.codex/skills/ai-teaching/
+cp -R . ~/.codex/skills/teaching/
 ```
 
 **Update after pulling new changes**
 
 ```bash
 git pull
-cp -R . ~/.codex/skills/ai-teaching/
+cp -R . ~/.codex/skills/teaching/
 ```
 
 **Finish**
@@ -102,7 +102,7 @@ If you prefer not to use the terminal, copying the skill folder into `~/.codex/s
 If your agent supports reusable prompt files, system prompts, or agent profiles, the minimum portable unit is the skill directory itself:
 
 ```
-ai-teaching-skill/
+teaching-skill/
 ├── README.md
 ├── SKILL.md
 └── references/...
@@ -329,7 +329,7 @@ Verify (Really Understood?)
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=CallMe1101/ai-teaching-skill&type=Date)](https://star-history.com/#CallMe1101/ai-teaching-skill&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=CallMe1101/teaching-skill&type=Date)](https://star-history.com/#CallMe1101/teaching-skill&Date)
 
 ---
 

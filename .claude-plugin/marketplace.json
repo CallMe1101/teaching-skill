@@ -1,0 +1,14 @@
+{
+  "name": "teaching-marketplace",
+  "owner": {
+    "name": "CallMe1101"
+  },
+  "plugins": [
+    {
+      "name": "teaching",
+      "source": "./",
+      "description": "Teach AI how to explain concepts systematically",
+      "version": "0.5.0"
+    }
+  ]
+}

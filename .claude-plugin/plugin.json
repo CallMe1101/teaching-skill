@@ -1,0 +1,10 @@
+{
+  "name": "teaching",
+  "description": "Teach AI how to explain concepts systematically. Adaptive teaching, controllable pacing, anti-forgetting.",
+  "version": "0.5.0",
+  "author": "CallMe1101",
+  "license": "MIT",
+  "skills": [
+    "SKILL.md"
+  ]
+}
