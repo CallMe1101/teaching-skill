@@ -14,16 +14,6 @@
 
 ## 🚀 快速开始（30秒）
 
-### Hermes Agent
-```bash
-# 方式1：直接复制
-mkdir -p ~/.hermes/skills/ai-teaching
-cp SKILL.md ~/.hermes/skills/ai-teaching/
-
-# 方式2：从GitHub安装
-/hermes skills install CallMe1101/ai-teaching-skill
-```
-
 ### Claude Code
 ```bash
 # Plugin marketplace
@@ -34,15 +24,25 @@ cp SKILL.md ~/.hermes/skills/ai-teaching/
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
-### 其他 Agent
-| Agent | 安装路径 |
-|-------|---------|
-| **Cursor** | `.cursor/rules/` 或 `.cursor/skills/` |
-| **Codex** | `~/.codex/skills/` |
-| **Windsurf** | Windsurf rules 配置 |
-| **Gemini CLI** | `~/.gemini/skills/` |
+### Codex
+```bash
+# 克隆仓库
+git clone https://github.com/CallMe1101/ai-teaching-skill.git
+cd ai-teaching-skill
 
-**完成！** 在对话中说"给我讲讲XXX"或"解释一下XXX"即可触发。
+# 安装技能
+mkdir -p ~/.codex/skills
+cp -R . ~/.codex/skills/ai-teaching/
+```
+
+### 其他 Agent
+将 `SKILL.md` 复制到你的 Agent 技能目录：
+- **Cursor**：`.cursor/rules/` 或 `.cursor/skills/`
+- **Windsurf**：Windsurf rules 配置
+- **Gemini CLI**：`~/.gemini/skills/`
+- **任意 Agent**：复制到你的提示库或项目中
+
+**完成！** 说"解释XXX"或"教我XXX"即可触发。
 
 ---
 
@@ -107,31 +107,6 @@ cp SKILL.md ~/.claude/skills/ai-teaching.md
 
 ---
 
-## 💡 使用示例
-
-### 示例1：概念教学（深度模式）
-```
-用户：给我讲讲什么是协整
-
-AI：[使用五步梯教学]
-Step 1（锚）：协整就像主人遛狗...
-Step 2（义）：专业地说，如果两个I(1)序列...
-Step 3（推）：我们来推导协整的检验方法...
-Step 4（例）：案例1：检验上证指数和深证指数...
-Step 5（界）：协整 vs 相关的区别...
-```
-
-### 示例2：代码教学（轻量模式）
-```
-用户：CSS里的flex是什么？
-
-AI：你玩过弹簧尺吗？Flex就像一个弹簧尺...
-你项目里那个导航栏，里面的按钮为什么能均匀排开？
-我先问你一个简单的问题：你知道display: flex是写在父元素上还是子元素上？
-```
-
----
-
 ## 🛠️ 技能详情
 
 | 功能 | 触发关键词 | 适用场景 | 状态 |
@@ -147,12 +122,12 @@ AI：你玩过弹簧尺吗？Flex就像一个弹簧尺...
 
 | Agent | 支持状态 | 安装方式 |
 |-------|---------|---------|
-| **Hermes Agent** | ✅ 完全支持 | `~/.hermes/skills/` |
 | **Claude Code** | ✅ 完全支持 | Plugin marketplace |
+| **Codex** | ✅ 完全支持 | `~/.codex/skills/` |
 | **Cursor** | ✅ 支持 | `.cursor/rules/` |
-| **Codex** | ✅ 支持 | `~/.codex/skills/` |
 | **Windsurf** | ✅ 支持 | Rules配置 |
 | **Gemini CLI** | ✅ 支持 | `~/.gemini/skills/` |
+| **任意 Agent** | ✅ 支持 | 复制SKILL.md到技能目录 |
 
 ---
 
@@ -166,7 +141,7 @@ AI：你玩过弹簧尺吗？Flex就像一个弹簧尺...
 
 这个 Skill 的设计融合了以下来源的教学经验：
 
-- 95+ 个 Hermes Agent 官方/社区 Skill 的结构分析
+- 95+ 个官方/社区 Skill 的结构分析
 - `teaching-code-to-beginners` Skill 的交互式教学方法
 - `systematic-debugging` Skill 的"铁律"设计手法
 - `humanizer` Skill 的 Before/After 对比法
@@ -224,9 +199,9 @@ MIT License - 详见 [LICENSE](LICENSE)
 - 使反面案例更加详细
 
 **语言策略**：
-- 采用中英文混合策略
-- 元数据英文，内容中文
-- 符合中文skill社区的惯例
+- 内部内容（SKILL.md）完全英文
+- README 提供中英文版本
+- 符合国际化标准
 
 ### v0.4.0 (2026-05-16)
 
@@ -236,6 +211,6 @@ MIT License - 详见 [LICENSE](LICENSE)
 
 ## 🙏 致谢
 
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) - AI Agent框架
 - [teaching-code-to-beginners](https://github.com/NousResearch/hermes-agent/blob/main/skills/teaching-code-to-beginners) - 代码教学Skill
 - [nature-skills](https://github.com/Yuan1z0825/nature-skills) - 学术写作Skill
+- 所有贡献者和测试者

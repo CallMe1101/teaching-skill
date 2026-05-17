@@ -14,17 +14,7 @@
 
 ## 🚀 Quick Start (30 seconds)
 
-### Hermes Agent
-```bash
-# Option 1: Direct copy
-mkdir -p ~/.hermes/skills/ai-teaching
-cp SKILL.md ~/.hermes/skills/ai-teaching/
-
-# Option 2: Install from GitHub
-/hermes skills install CallMe1101/ai-teaching-skill
-```
-
-### Claude Code
+### For Claude Code
 ```bash
 # Plugin marketplace
 /plugin marketplace add CallMe1101/ai-teaching-skill
@@ -34,13 +24,23 @@ cp SKILL.md ~/.hermes/skills/ai-teaching/
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
-### Other Agents
-| Agent | Installation Path |
-|-------|------------------|
-| **Cursor** | `.cursor/rules/` or `.cursor/skills/` |
-| **Codex** | `~/.codex/skills/` |
-| **Windsurf** | Windsurf rules configuration |
-| **Gemini CLI** | `~/.gemini/skills/` |
+### For Codex
+```bash
+# Clone repository
+git clone https://github.com/CallMe1101/ai-teaching-skill.git
+cd ai-teaching-skill
+
+# Install skill
+mkdir -p ~/.codex/skills
+cp -R . ~/.codex/skills/ai-teaching/
+```
+
+### For Other Agents
+Copy `SKILL.md` to your agent's skill directory:
+- **Cursor**: `.cursor/rules/` or `.cursor/skills/`
+- **Windsurf**: Windsurf rules configuration
+- **Gemini CLI**: `~/.gemini/skills/`
+- **Any Agent**: Copy to your prompt library or project
 
 **Done!** Say "explain XXX" or "teach me about XXX" to trigger.
 
@@ -102,33 +102,8 @@ Verify (Really Understood?)
 
 - User wants "do it for me" not "teach me how"
 - User explicitly says "just give me the answer"
-- Task is pure execution (write code, run commands)
-- User is L5 proficient developer, just needs API lookup
-
----
-
-## 💡 Usage Examples
-
-### Example 1: Concept Teaching (Deep Mode)
-```
-User: What is cointegration?
-
-AI: [Uses Five-Step Ladder]
-Step 1 (Anchor): Cointegration is like walking a dog...
-Step 2 (Define): Technically, if two I(1) sequences...
-Step 3 (Derive): Let's derive the cointegration test...
-Step 4 (Example): Case 1: Testing Shanghai and Shenzhen indices...
-Step 5 (Compare): Cointegration vs Correlation...
-```
-
-### Example 2: Code Teaching (Light Mode)
-```
-User: What is CSS flex?
-
-AI: Have you played with a spring ruler? Flex is like a spring ruler...
-The buttons in your navbar spread evenly? That's flex.
-First question: Is display: flex on parent or child element?
-```
+- Task is pure execution (write code, run commands), no understanding needed
+- User is L5 proficient developer, only needs specific API/parameter lookup
 
 ---
 
@@ -147,12 +122,12 @@ First question: Is display: flex on parent or child element?
 
 | Agent | Support Status | Installation |
 |-------|---------------|--------------|
-| **Hermes Agent** | ✅ Full Support | `~/.hermes/skills/` |
 | **Claude Code** | ✅ Full Support | Plugin marketplace |
+| **Codex** | ✅ Full Support | `~/.codex/skills/` |
 | **Cursor** | ✅ Supported | `.cursor/rules/` |
-| **Codex** | ✅ Supported | `~/.codex/skills/` |
 | **Windsurf** | ✅ Supported | Rules config |
 | **Gemini CLI** | ✅ Supported | `~/.gemini/skills/` |
+| **Any Agent** | ✅ Supported | Copy SKILL.md to skill directory |
 
 ---
 
@@ -166,7 +141,7 @@ First question: Is display: flex on parent or child element?
 
 This skill's design incorporates teaching experience from:
 
-- 95+ Hermes Agent official/community skills structure analysis
+- 95+ official/community skills structure analysis
 - `teaching-code-to-beginners` skill's interactive teaching method
 - `systematic-debugging` skill's "iron law" design technique
 - `humanizer` skill's Before/After comparison method
@@ -224,8 +199,9 @@ MIT License - see [LICENSE](LICENSE)
 - Made anti-patterns more detailed
 
 **Language Strategy**:
-- Bilingual approach (metadata English, content Chinese)
-- Compatible with Chinese skill community conventions
+- Internal content (SKILL.md) fully in English
+- README available in English and Chinese
+- Compatible with international standards
 
 ### v0.4.0 (2026-05-16)
 
@@ -235,6 +211,6 @@ Initial version with complete teaching flow and methodology.
 
 ## 🙏 Acknowledgments
 
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) - AI Agent framework
 - [teaching-code-to-beginners](https://github.com/NousResearch/hermes-agent/blob/main/skills/teaching-code-to-beginners) - Code teaching skill
 - [nature-skills](https://github.com/Yuan1z0825/nature-skills) - Academic writing skills
+- All contributors and testers

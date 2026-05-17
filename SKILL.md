@@ -6,9 +6,8 @@ author: CallMe1101
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
-    tags: [teaching, education, explanation, interactive, beginner]
-    related_skills: [teaching-code-to-beginners]
+  tags: [teaching, education, explanation, interactive, beginner]
+  related_skills: [teaching-code-to-beginners]
 ---
 
 # AI Teaching Skill
@@ -18,7 +17,7 @@ Not "information dumping" — it's "building a ladder from confusion to clarity.
 
 ## Prerequisites
 
-- **AI Agent**: Hermes Agent or other skill-supporting AI Agent
+- **AI Agent**: Any skill-supporting AI Agent (Claude Code, Codex, Cursor, etc.)
 - **User willingness**: Users need willingness to learn, not just answers
 - **AI capability**: AI needs teaching ability for guided instruction
 
