@@ -21,36 +21,100 @@ A skill file for AI agents (Claude Code, Codex, Cursor, etc.) that teaches AI ho
 
 ## 🚀 Installation
 
-### For Claude Code
+### 1. Claude Code
 
-**Primary method (Plugin marketplace)**:
+Claude Code can use this skill directly as a local skill. This is the simplest installation path.
+
+**Primary method: Plugin marketplace installation**
+
+This repository is published as a Claude Code plugin, making installation simple.
+
 ```bash
-/plugin marketplace add CallMe1101/ai-teaching-skill
+# Add the marketplace (one-time)
+/plugin marketplace add https://github.com/CallMe1101/ai-teaching-skill
+
+# Install the plugin
 /plugin install ai-teaching-skill
+
+# Reload to apply
 /reload-plugins
 ```
 
-**Alternative (Manual)**:
+The skill is available automatically after reload. No manual wrapper setup needed.
+
+**Alternative: Manual copy**
+
+If you prefer manual control, copy the SKILL.md file to your Claude skills directory:
+
 ```bash
 mkdir -p ~/.claude/skills
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
-### For Codex
+Then open a new Claude Code session and invoke it naturally:
+
+```
+Explain what is API
+Teach me about machine learning
+```
+
+**Official Claude Code docs**:
+- [Skills](https://docs.anthropic.com/en/docs/claude-code/skills)
+- [Slash commands](https://docs.anthropic.com/en/docs/claude-code/commands)
+
+### 2. Codex
+
+Codex can use this skill directly as a local skill. This is the simplest installation path.
+
+**Clone the repo**
 
 ```bash
-# Clone repository
 git clone https://github.com/CallMe1101/ai-teaching-skill.git
 cd ai-teaching-skill
+```
 
-# Install skill
+**Install the skill**
+
+```bash
 mkdir -p ~/.codex/skills
 cp -R . ~/.codex/skills/ai-teaching/
 ```
 
-### For Other Agents
+**Update after pulling new changes**
 
-Copy `SKILL.md` to your agent's skill directory:
+```bash
+git pull
+cp -R . ~/.codex/skills/ai-teaching/
+```
+
+**Finish**
+
+Restart Codex so newly added skills are picked up.
+
+Then ask naturally, for example:
+- `Explain what is API`
+- `Teach me about machine learning`
+
+If you prefer not to use the terminal, copying the skill folder into `~/.codex/skills/` manually works as well.
+
+### 3. Other agents or manual use
+
+If your agent supports reusable prompt files, system prompts, or agent profiles, the minimum portable unit is the skill directory itself:
+
+```
+ai-teaching-skill/
+├── README.md
+├── SKILL.md
+└── references/...
+```
+
+In that case:
+
+1. Copy the whole skill directory into your prompt library or project.
+2. Preserve `SKILL.md` and any `references/` files together.
+3. Adapt the frontmatter and body to the target agent's native format if needed.
+
+**Supported agents**:
 - **Cursor**: `.cursor/rules/` or `.cursor/skills/`
 - **Windsurf**: Windsurf rules configuration
 - **Gemini CLI**: `~/.gemini/skills/`

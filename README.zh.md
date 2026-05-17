@@ -21,40 +21,104 @@
 
 ## 🚀 安装
 
-### Claude Code
+### 1. Claude Code
 
-**主要方法（插件市场）**：
+Claude Code 可以直接使用这个技能作为本地技能。这是最简单的安装路径。
+
+**主要方法：插件市场安装**
+
+这个仓库已发布为 Claude Code 插件，使安装变得简单。
+
 ```bash
-/plugin marketplace add CallMe1101/ai-teaching-skill
+# 添加市场（一次性）
+/plugin marketplace add https://github.com/CallMe1101/ai-teaching-skill
+
+# 安装插件
 /plugin install ai-teaching-skill
+
+# 重新加载以应用
 /reload-plugins
 ```
 
-**备用方法（手动）**：
+重新加载后技能自动可用，无需手动设置。
+
+**备用方法：手动复制**
+
+如果你更喜欢手动控制，可以将 SKILL.md 文件复制到 Claude 技能目录：
+
 ```bash
 mkdir -p ~/.claude/skills
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
-### Codex
+然后打开新的 Claude Code 会话，自然地调用它：
+
+```
+解释一下什么是API
+教我机器学习
+```
+
+**官方 Claude Code 文档**：
+- [Skills](https://docs.anthropic.com/en/docs/claude-code/skills)
+- [Slash commands](https://docs.anthropic.com/en/docs/claude-code/commands)
+
+### 2. Codex
+
+Codex 可以直接使用这个技能作为本地技能。这是最简单的安装路径。
+
+**克隆仓库**
 
 ```bash
-# 克隆仓库
 git clone https://github.com/CallMe1101/ai-teaching-skill.git
 cd ai-teaching-skill
+```
 
-# 安装技能
+**安装技能**
+
+```bash
 mkdir -p ~/.codex/skills
 cp -R . ~/.codex/skills/ai-teaching/
 ```
 
-### 其他 Agent
+**更新后重新安装**
 
-将 `SKILL.md` 复制到你的 Agent 技能目录：
+```bash
+git pull
+cp -R . ~/.codex/skills/ai-teaching/
+```
+
+**完成**
+
+重启 Codex 以便新添加的技能被识别。
+
+然后自然地提问，例如：
+- `解释一下什么是API`
+- `教我机器学习`
+
+如果你不想使用终端，手动将技能文件夹复制到 `~/.codex/skills/` 也可以。
+
+### 3. 其他代理或手动使用
+
+如果你的代理支持可重用的提示文件、系统提示或代理配置，最小可移植单元是技能目录本身：
+
+```
+ai-teaching-skill/
+├── README.md
+├── SKILL.md
+└── references/...
+```
+
+在这种情况下：
+
+1. 将整个技能目录复制到你的提示库或项目中。
+2. 保持 `SKILL.md` 和任何 `references/` 文件在一起。
+3. 根据需要调整前置元数据和正文以适应目标代理的原生格式。
+
+**支持的代理**：
 - **Cursor**：`.cursor/rules/` 或 `.cursor/skills/`
 - **Windsurf**：Windsurf rules 配置
 - **Gemini CLI**：`~/.gemini/skills/`
-- **任意 Agent**：复制到你的提示库或项目中
+- **任意代理**：复制到你的提示库或项目中
 
 ---
 
