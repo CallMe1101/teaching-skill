@@ -2,7 +2,6 @@
 name: ai-teaching
 description: "Teach AI how to explain technical concepts to users. Adaptive teaching, controllable pacing, anti-forgetting."
 version: 0.5.0
-author: CallMe1101
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

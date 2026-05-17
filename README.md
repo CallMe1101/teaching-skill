@@ -151,15 +151,6 @@ This skill's design incorporates teaching experience from:
 
 ---
 
-## 👨‍💻 Author
-
-**Zhuoran Zhao (赵卓然)** - Southwestern University of Finance and Economics, Financial Engineering
-
-- GitHub: [@CallMe1101](https://github.com/CallMe1101)
-- Email: zhao.zr11@protonmail.com
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -177,35 +168,6 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE)
-
----
-
-## 📝 Changelog
-
-### v0.5.0 (2026-05-17)
-
-**Structure Changes**:
-- Added Prerequisites section
-- Added Inputs Required section
-- Added Verification Checklist section
-- Optimized When to Use / When NOT to Use
-- Optimized Quality Standard
-- Optimized Anti-Patterns
-
-**Content Optimization**:
-- Made teaching flow more specific and actionable
-- Added more examples and cases
-- Made verification methods clearer
-- Made anti-patterns more detailed
-
-**Language Strategy**:
-- Internal content (SKILL.md) fully in English
-- README available in English and Chinese
-- Compatible with international standards
-
-### v0.4.0 (2026-05-16)
-
-Initial version with complete teaching flow and methodology.
 
 ---
 

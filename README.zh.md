@@ -151,15 +151,6 @@ cp -R . ~/.codex/skills/ai-teaching/
 
 ---
 
-## 👨‍💻 作者
-
-**赵卓然** - 西南财经大学金融工程专业
-
-- GitHub: [@CallMe1101](https://github.com/CallMe1101)
-- 邮箱: zhao.zr11@protonmail.com
-
----
-
 ## 🤝 贡献
 
 欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
@@ -177,35 +168,6 @@ cp -R . ~/.codex/skills/ai-teaching/
 ## 📄 许可证
 
 MIT License - 详见 [LICENSE](LICENSE)
-
----
-
-## 📝 更新日志
-
-### v0.5.0 (2026-05-17)
-
-**结构调整**：
-- 添加 Prerequisites 部分（前置条件）
-- 添加 Inputs Required 部分（输入要求）
-- 添加 Verification Checklist 部分（验证清单）
-- 优化 When to Use / When NOT to Use 部分
-- 优化 Quality Standard 部分
-- 优化 Anti-Patterns 部分
-
-**内容优化**：
-- 使教学流程更加具体和可操作
-- 添加更多的示例和案例
-- 使验证方法更加明确
-- 使反面案例更加详细
-
-**语言策略**：
-- 内部内容（SKILL.md）完全英文
-- README 提供中英文版本
-- 符合国际化标准
-
-### v0.4.0 (2026-05-16)
-
-初始版本，包含完整的教学流程和方法论。
 
 ---
 
