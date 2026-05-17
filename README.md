@@ -1,24 +1,26 @@
-# AI Teaching Skill
+# 🎓 AI Teaching Skill
 
 [![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/network/members)
 
-> **教 AI 如何把一个概念讲到用户真正理解。**
-> 不是"信息搬运"，是"搭建从不懂到懂的梯子"。
+> **Teach AI how to explain concepts until users truly understand.**
+> Not "information dumping" — it's "building a ladder from confusion to clarity."
+
+[中文文档](README.zh.md)
 
 ---
 
-## 🚀 快速开始（30秒）
+## 🚀 Quick Start (30 seconds)
 
 ### Hermes Agent
 ```bash
-# 方式1：直接复制
+# Option 1: Direct copy
 mkdir -p ~/.hermes/skills/ai-teaching
 cp SKILL.md ~/.hermes/skills/ai-teaching/
 
-# 方式2：从GitHub安装
+# Option 2: Install from GitHub
 /hermes skills install CallMe1101/ai-teaching-skill
 ```
 
@@ -28,207 +30,211 @@ cp SKILL.md ~/.hermes/skills/ai-teaching/
 /plugin marketplace add CallMe1101/ai-teaching-skill
 /plugin install ai-teaching-skill
 
-# 或手动复制
+# Or manual copy
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
-### 其他 Agent
-| Agent | 安装路径 |
-|-------|---------|
-| **Cursor** | `.cursor/rules/` 或 `.cursor/skills/` |
+### Other Agents
+| Agent | Installation Path |
+|-------|------------------|
+| **Cursor** | `.cursor/rules/` or `.cursor/skills/` |
 | **Codex** | `~/.codex/skills/` |
-| **Windsurf** | Windsurf rules 配置 |
+| **Windsurf** | Windsurf rules configuration |
 | **Gemini CLI** | `~/.gemini/skills/` |
 
-**完成！** 在对话中说"给我讲讲XXX"或"解释一下XXX"即可触发。
+**Done!** Say "explain XXX" or "teach me about XXX" to trigger.
 
 ---
 
-## 🎯 解决什么问题？
+## 🎯 What Problems Does It Solve?
 
-| 问题 | 传统AI教学 | AI Teaching Skill |
-|------|-----------|-------------------|
-| **信息过载** | 一次性dump所有信息 | 一次一个概念，循序渐进 |
-| **缺乏引导** | 直接给答案 | 引导学生自己发现 |
-| **节奏失控** | 固定速度教学 | 自适应节奏调整 |
-| **验证缺失** | 不知道是否真的懂了 | 多种验证方法 |
-| **遗忘曲线** | 学完就忘 | 对抗遗忘机制 |
+| Problem | Traditional AI Teaching | AI Teaching Skill |
+|---------|------------------------|-------------------|
+| **Information Overload** | Dumps all info at once | One concept at a time |
+| **Lack of Guidance** | Gives answers directly | Guides students to discover |
+| **Pacing Issues** | Fixed speed teaching | Adaptive pacing |
+| **No Verification** | Doesn't know if understood | Multiple verification methods |
+| **Forgetting Curve** | Learn and forget | Anti-forgetting mechanisms |
 
 ---
 
-## 📚 核心设计
+## 📚 Core Design
 
-### 三条铁律（不可违反）
+### Three Iron Laws (Never Violate)
 
-1. **不给答案，给梯子** — 引导发现，不是直接告诉
-2. **先诊断，后教学** — 先搞清楚学生水平，再决定怎么教
-3. **一次一个，不贪多** — 一问一答只引入一个新知识点
+1. **Don't give answers, give scaffolding** — Guide discovery, don't tell
+2. **Diagnose first, teach later** — Know student level before teaching
+3. **One at a time, don't rush** — One new concept per exchange
 
-### 两种教学模式
+### Two Teaching Modes
 
-| 模式 | 适用场景 | 流程 |
-|------|---------|------|
-| **轻量模式** | 代码/工具/项目/操作 | 比喻 → 展示 → 猜测 → 确认 → 动手 |
-| **深度模式** | 概念/理论/原理/模型 | 五步梯：锚→义→推→例→界 |
+| Mode | Use Case | Flow |
+|------|----------|------|
+| **Light Mode** | Code/tools/projects/operations | Analogy → Show → Guess → Confirm → Try |
+| **Deep Mode** | Concepts/theory/principles/models | Five-Step Ladder: Anchor → Define → Derive → Example → Compare |
 
-### 教学流程
+### Teaching Flow
 
 ```
-诊断（水平 + 目标）
+Diagnose (Level + Goals)
     ↓
-规划（学习路线图）
+Plan (Learning Roadmap)
     ↓
-教学（轻量/深度模式）
+Teach (Light/Deep Mode)
     ↓
-验证（真的懂了吗？）
+Verify (Really Understood?)
 ```
 
 ---
 
-## 🔍 什么时候用？
+## 🔍 When to Use
 
-### 触发关键词
+### Trigger Keywords
 
-| 关键词 | 场景 |
-|-------|------|
-| "给我讲讲"、"解释一下"、"教我" | 概念教学 |
-| "这是什么意思"、"帮我理解" | 代码/工具教学 |
-| "learn"、"explain" | 英文触发 |
-| "深入理解"、"完整推导" | 深度模式 |
-| "简单说一下" | 轻量模式 |
+| Keyword | Scenario |
+|---------|----------|
+| "explain", "teach me", "what is" | Concept teaching |
+| "what does this mean", "help me understand" | Code/tool teaching |
+| "deep understanding", "full derivation" | Deep mode |
+| "quick explanation" | Light mode |
 
-### 不适用场景
+### When NOT to Use
 
-- 用户要的是"帮我做完"而不是"教我怎么做"
-- 用户明确说"直接给我答案"
-- 任务是纯执行型（写代码、跑命令），不需要理解
-- 用户是L5熟练开发者，只需要查一个具体API/参数
+- User wants "do it for me" not "teach me how"
+- User explicitly says "just give me the answer"
+- Task is pure execution (write code, run commands)
+- User is L5 proficient developer, just needs API lookup
 
 ---
 
-## 💡 使用示例
+## 💡 Usage Examples
 
-### 示例1：概念教学（深度模式）
+### Example 1: Concept Teaching (Deep Mode)
 ```
-用户：给我讲讲什么是协整
+User: What is cointegration?
 
-AI：[使用五步梯教学]
-Step 1（锚）：协整就像主人遛狗...
-Step 2（义）：专业地说，如果两个I(1)序列...
-Step 3（推）：我们来推导协整的检验方法...
-Step 4（例）：案例1：检验上证指数和深证指数...
-Step 5（界）：协整 vs 相关的区别...
-```
-
-### 示例2：代码教学（轻量模式）
-```
-用户：CSS里的flex是什么？
-
-AI：你玩过弹簧尺吗？Flex就像一个弹簧尺...
-你项目里那个导航栏，里面的按钮为什么能均匀排开？
-我先问你一个简单的问题：你知道display: flex是写在父元素上还是子元素上？
+AI: [Uses Five-Step Ladder]
+Step 1 (Anchor): Cointegration is like walking a dog...
+Step 2 (Define): Technically, if two I(1) sequences...
+Step 3 (Derive): Let's derive the cointegration test...
+Step 4 (Example): Case 1: Testing Shanghai and Shenzhen indices...
+Step 5 (Compare): Cointegration vs Correlation...
 ```
 
----
+### Example 2: Code Teaching (Light Mode)
+```
+User: What is CSS flex?
 
-## 🛠️ 技能详情
-
-| 功能 | 触发关键词 | 适用场景 | 状态 |
-|------|-----------|---------|------|
-| 概念教学 | "给我讲讲"、"解释一下" | 概念、理论、原理 | ✅ Stable |
-| 代码教学 | "这是什么意思"、"帮我理解" | 代码、工具、项目 | ✅ Stable |
-| 深度学习 | "深入理解"、"完整推导" | 需要完整五步梯 | ✅ Stable |
-| 快速解释 | "简单说一下" | 轻量模式 | ✅ Stable |
+AI: Have you played with a spring ruler? Flex is like a spring ruler...
+The buttons in your navbar spread evenly? That's flex.
+First question: Is display: flex on parent or child element?
+```
 
 ---
 
-## 🌐 兼容性
+## 🛠️ Skill Details
 
-| Agent | 支持状态 | 安装方式 |
-|-------|---------|---------|
-| **Hermes Agent** | ✅ 完全支持 | `~/.hermes/skills/` |
-| **Claude Code** | ✅ 完全支持 | Plugin marketplace |
-| **Cursor** | ✅ 支持 | `.cursor/rules/` |
-| **Codex** | ✅ 支持 | `~/.codex/skills/` |
-| **Windsurf** | ✅ 支持 | Rules配置 |
-| **Gemini CLI** | ✅ 支持 | `~/.gemini/skills/` |
+| Feature | Trigger Keywords | Use Case | Status |
+|---------|-----------------|----------|--------|
+| Concept Teaching | "explain", "teach me" | Concepts, theory, principles | ✅ Stable |
+| Code Teaching | "what does this mean" | Code, tools, projects | ✅ Stable |
+| Deep Learning | "deep understanding" | Need full Five-Step Ladder | ✅ Stable |
+| Quick Explanation | "quick explanation" | Light mode | ✅ Stable |
 
 ---
 
-## 📖 设计来源
+## 🌐 Compatibility
 
-这个 Skill 的设计融合了以下来源的教学经验：
-
-- 95+ 个 Hermes Agent 官方/社区 Skill 的结构分析
-- `teaching-code-to-beginners` Skill 的交互式教学方法
-- `systematic-debugging` Skill 的"铁律"设计手法
-- `humanizer` Skill 的 Before/After 对比法
-- Study Mode 提示词的路线图 + 掌握度追踪设计
-- 五步教学法（概念锚定→专业定义→完整推导→实践案例→差异对比）
-- 科普作家提示词的比喻优先 + 故事化叙事方法
+| Agent | Support Status | Installation |
+|-------|---------------|--------------|
+| **Hermes Agent** | ✅ Full Support | `~/.hermes/skills/` |
+| **Claude Code** | ✅ Full Support | Plugin marketplace |
+| **Cursor** | ✅ Supported | `.cursor/rules/` |
+| **Codex** | ✅ Supported | `~/.codex/skills/` |
+| **Windsurf** | ✅ Supported | Rules config |
+| **Gemini CLI** | ✅ Supported | `~/.gemini/skills/` |
 
 ---
 
-## 👨‍💻 作者
+## ⭐ Star History
 
-**赵卓然** - 西南财经大学金融工程专业
+[![Star History Chart](https://api.star-history.com/svg?repos=CallMe1101/ai-teaching-skill&type=Date)](https://star-history.com/#CallMe1101/ai-teaching-skill&Date)
+
+---
+
+## 📖 Design Sources
+
+This skill's design incorporates teaching experience from:
+
+- 95+ Hermes Agent official/community skills structure analysis
+- `teaching-code-to-beginners` skill's interactive teaching method
+- `systematic-debugging` skill's "iron law" design technique
+- `humanizer` skill's Before/After comparison method
+- Study Mode prompt's roadmap + mastery tracking design
+- Five-step teaching method (concept anchoring → professional definition → complete derivation → practice cases → difference comparison)
+- Science writer prompt's metaphor-first + storytelling narrative method
+
+---
+
+## 👨‍💻 Author
+
+**Zhuoran Zhao (赵卓然)** - Southwestern University of Finance and Economics, Financial Engineering
 
 - GitHub: [@CallMe1101](https://github.com/CallMe1101)
-- 邮箱: zhao.zr11@protonmail.com
+- Email: zhao.zr11@protonmail.com
 
 ---
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-### 如何贡献
+### How to Contribute
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
-
----
-
-## 📄 许可证
-
-MIT License - 详见 [LICENSE](LICENSE)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 📝 更新日志
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE)
+
+---
+
+## 📝 Changelog
 
 ### v0.5.0 (2026-05-17)
 
-**结构调整**：
-- 添加 Prerequisites 部分（前置条件）
-- 添加 Inputs Required 部分（输入要求）
-- 添加 Verification Checklist 部分（验证清单）
-- 优化 When to Use / When NOT to Use 部分
-- 优化 Quality Standard 部分
-- 优化 Anti-Patterns 部分
+**Structure Changes**:
+- Added Prerequisites section
+- Added Inputs Required section
+- Added Verification Checklist section
+- Optimized When to Use / When NOT to Use
+- Optimized Quality Standard
+- Optimized Anti-Patterns
 
-**内容优化**：
-- 使教学流程更加具体和可操作
-- 添加更多的示例和案例
-- 使验证方法更加明确
-- 使反面案例更加详细
+**Content Optimization**:
+- Made teaching flow more specific and actionable
+- Added more examples and cases
+- Made verification methods clearer
+- Made anti-patterns more detailed
 
-**语言策略**：
-- 采用中英文混合策略
-- 元数据英文，内容中文
-- 符合中文skill社区的惯例
+**Language Strategy**:
+- Bilingual approach (metadata English, content Chinese)
+- Compatible with Chinese skill community conventions
 
 ### v0.4.0 (2026-05-16)
 
-初始版本，包含完整的教学流程和方法论。
+Initial version with complete teaching flow and methodology.
 
 ---
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- [Hermes Agent](https://github.com/NousResearch/hermes-agent) - AI Agent框架
-- [teaching-code-to-beginners](https://github.com/NousResearch/hermes-agent/blob/main/skills/teaching-code-to-beginners) - 代码教学Skill
-- [nature-skills](https://github.com/Yuan1z0825/nature-skills) - 学术写作Skill
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) - AI Agent framework
+- [teaching-code-to-beginners](https://github.com/NousResearch/hermes-agent/blob/main/skills/teaching-code-to-beginners) - Code teaching skill
+- [nature-skills](https://github.com/Yuan1z0825/nature-skills) - Academic writing skills
