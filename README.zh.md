@@ -1,30 +1,43 @@
-# 🎓 AI Teaching Skill
-
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/network/members)
+# AI Teaching Skill
 
 > **教 AI 如何把一个概念讲到用户真正理解。**
 > 不是"信息搬运"，是"搭建从不懂到懂的梯子"。
 
-[English](README.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
+
+[English](README.md) | [中文文档](README.zh.md)
 
 ---
 
-## 🚀 快速开始（30秒）
+## 这是什么？
+
+一个给 AI Agent（Claude Code、Codex、Cursor 等）使用的教学技能文件。加载这个 Skill 后，AI 会按照一套系统化的教学方法论来给用户讲解概念，而不是一股脑地把信息 dump 给你。
+
+**核心理念**：好的教学 = 学生能用自己的话向别人解释清楚这个概念。
+
+---
+
+## 🚀 安装
 
 ### Claude Code
+
+**主要方法（插件市场）**：
 ```bash
-# Plugin marketplace
 /plugin marketplace add CallMe1101/ai-teaching-skill
 /plugin install ai-teaching-skill
+/reload-plugins
+```
 
-# 或手动复制
+**备用方法（手动）**：
+```bash
+mkdir -p ~/.claude/skills
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
 ### Codex
+
 ```bash
 # 克隆仓库
 git clone https://github.com/CallMe1101/ai-teaching-skill.git
@@ -36,13 +49,37 @@ cp -R . ~/.codex/skills/ai-teaching/
 ```
 
 ### 其他 Agent
+
 将 `SKILL.md` 复制到你的 Agent 技能目录：
 - **Cursor**：`.cursor/rules/` 或 `.cursor/skills/`
 - **Windsurf**：Windsurf rules 配置
 - **Gemini CLI**：`~/.gemini/skills/`
 - **任意 Agent**：复制到你的提示库或项目中
 
-**完成！** 说"解释XXX"或"教我XXX"即可触发。
+---
+
+## 💡 使用示例
+
+**用户**："解释一下什么是API"
+
+**AI（使用skill）**：
+> 在开始之前，我想先了解一下你的情况。你之前接触过"API"这个词吗？比如在学编程、用工具、或者读文档时看到过？尝试用自己的话描述一下你认为的API是什么（哪怕只说一个词或一个比喻也行）。
+>
+> 不用紧张，怎么想的就怎么说，我根据你的回答来调整接下来的节奏。😊
+
+**用户**："听说过，但不太清楚"
+
+**AI**：
+> 好的！让我用一个比喻来帮助你理解。
+>
+> 想象你去餐厅吃饭。你（客户端）想点餐，但你不能直接进厨房做饭。你需要通过服务员（API）来传达你的需求。
+>
+> 服务员的工作：
+> 1. 接收你的点单（请求）
+> 2. 把点单告诉厨房（服务器）
+> 3. 把做好的菜端给你（响应）
+>
+> **API就是软件世界里的"服务员"**。它让你不用知道厨房（服务器）怎么运作，就能吃到饭（获取数据）。
 
 ---
 

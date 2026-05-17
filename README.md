@@ -1,30 +1,43 @@
-# 🎓 AI Teaching Skill
-
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/network/members)
+# AI Teaching Skill
 
 > **Teach AI how to explain concepts until users truly understand.**
 > Not "information dumping" — it's "building a ladder from confusion to clarity."
 
-[中文文档](README.zh.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
+
+[English](README.md) | [中文文档](README.zh.md)
 
 ---
 
-## 🚀 Quick Start (30 seconds)
+## What is this?
+
+A skill file for AI agents (Claude Code, Codex, Cursor, etc.) that teaches AI how to explain concepts systematically. Instead of dumping information, it guides students from confusion to understanding through structured teaching methods.
+
+**Core idea**: Good teaching = student can explain the concept to others in their own words.
+
+---
+
+## 🚀 Installation
 
 ### For Claude Code
+
+**Primary method (Plugin marketplace)**:
 ```bash
-# Plugin marketplace
 /plugin marketplace add CallMe1101/ai-teaching-skill
 /plugin install ai-teaching-skill
+/reload-plugins
+```
 
-# Or manual copy
+**Alternative (Manual)**:
+```bash
+mkdir -p ~/.claude/skills
 cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
 
 ### For Codex
+
 ```bash
 # Clone repository
 git clone https://github.com/CallMe1101/ai-teaching-skill.git
@@ -36,13 +49,37 @@ cp -R . ~/.codex/skills/ai-teaching/
 ```
 
 ### For Other Agents
+
 Copy `SKILL.md` to your agent's skill directory:
 - **Cursor**: `.cursor/rules/` or `.cursor/skills/`
 - **Windsurf**: Windsurf rules configuration
 - **Gemini CLI**: `~/.gemini/skills/`
 - **Any Agent**: Copy to your prompt library or project
 
-**Done!** Say "explain XXX" or "teach me about XXX" to trigger.
+---
+
+## 💡 Usage Example
+
+**User**: "Explain what is API"
+
+**AI (with skill)**:
+> Before we start, I'd like to understand your current level. Have you encountered "API" before? For example, while learning programming, using tools, or reading documentation? Try to describe what you think an API is in your own words (even just one word or a metaphor is fine).
+>
+> Don't worry, just say what you think, and I'll adjust the pace based on your answer. 😊
+
+**User**: "I've heard of it but don't really understand"
+
+**AI**:
+> Great! Let me use a metaphor to help you understand.
+>
+> Imagine you're at a restaurant. You (the client) want to order food, but you can't directly go into the kitchen to cook. You need a waiter (API) to convey your needs.
+>
+> The waiter's job:
+> 1. Takes your order (request)
+> 2. Tells the kitchen (server)
+> 3. Brings the food to you (response)
+>
+> **An API is like a "waiter" in the software world.** It lets you get food (data) without knowing how the kitchen (server) works.
 
 ---
 
