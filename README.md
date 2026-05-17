@@ -1,70 +1,161 @@
 # AI Teaching Skill
 
-> 教 AI 如何把一个概念讲到用户真正理解。
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/CallMe1101/ai-teaching-skill/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/CallMe1101/ai-teaching-skill.svg?style=social)](https://github.com/CallMe1101/ai-teaching-skill/network/members)
+
+> **教 AI 如何把一个概念讲到用户真正理解。**
 > 不是"信息搬运"，是"搭建从不懂到懂的梯子"。
 
-## 这是什么
+---
 
-一个给 AI Agent（Hermes Agent / Claude Code / Cursor 等）使用的教学技能文件。
-加载这个 Skill 后，AI 会按照一套系统化的教学方法论来给用户讲解概念，
-而不是一股脑地把信息 dump 给你。
+## 🚀 快速开始（30秒）
 
-## 核心设计
+### Hermes Agent
+```bash
+# 方式1：直接复制
+mkdir -p ~/.hermes/skills/ai-teaching
+cp SKILL.md ~/.hermes/skills/ai-teaching/
 
-### 三条铁律
-
-1. **不给答案，给梯子。** 引导发现，不是直接告诉。
-2. **先诊断，后教学。** 先搞清楚学生水平，再决定怎么教。
-3. **一次一个，不贪多。** 一问一答只引入一个新知识点。
-
-### 教学流程
-
+# 方式2：从GitHub安装
+/hermes skills install CallMe1101/ai-teaching-skill
 ```
-诊断（水平 + 目标） → 规划（学习路线图） → 教学（轻量/深度模式） → 验证（真的懂了吗？）
+
+### Claude Code
+```bash
+# Plugin marketplace
+/plugin marketplace add CallMe1101/ai-teaching-skill
+/plugin install ai-teaching-skill
+
+# 或手动复制
+cp SKILL.md ~/.claude/skills/ai-teaching.md
 ```
+
+### 其他 Agent
+| Agent | 安装路径 |
+|-------|---------|
+| **Cursor** | `.cursor/rules/` 或 `.cursor/skills/` |
+| **Codex** | `~/.codex/skills/` |
+| **Windsurf** | Windsurf rules 配置 |
+| **Gemini CLI** | `~/.gemini/skills/` |
+
+**完成！** 在对话中说"给我讲讲XXX"或"解释一下XXX"即可触发。
+
+---
+
+## 🎯 解决什么问题？
+
+| 问题 | 传统AI教学 | AI Teaching Skill |
+|------|-----------|-------------------|
+| **信息过载** | 一次性dump所有信息 | 一次一个概念，循序渐进 |
+| **缺乏引导** | 直接给答案 | 引导学生自己发现 |
+| **节奏失控** | 固定速度教学 | 自适应节奏调整 |
+| **验证缺失** | 不知道是否真的懂了 | 多种验证方法 |
+| **遗忘曲线** | 学完就忘 | 对抗遗忘机制 |
+
+---
+
+## 📚 核心设计
+
+### 三条铁律（不可违反）
+
+1. **不给答案，给梯子** — 引导发现，不是直接告诉
+2. **先诊断，后教学** — 先搞清楚学生水平，再决定怎么教
+3. **一次一个，不贪多** — 一问一答只引入一个新知识点
 
 ### 两种教学模式
 
 | 模式 | 适用场景 | 流程 |
 |------|---------|------|
-| 轻量模式 | 代码/工具/项目/操作 | 比喻 → 展示 → 猜测 → 确认 → 动手 |
-| 深度模式 | 概念/理论/原理/模型 | 五步梯：锚→义→推→例→界 |
+| **轻量模式** | 代码/工具/项目/操作 | 比喻 → 展示 → 猜测 → 确认 → 动手 |
+| **深度模式** | 概念/理论/原理/模型 | 五步梯：锚→义→推→例→界 |
 
-### 五步梯（深度模式）
+### 教学流程
 
 ```
-锚（比喻建模）→ 义（专业定义）→ 推（完整推导）→ 例（实践案例）→ 界（差异对比）
+诊断（水平 + 目标）
+    ↓
+规划（学习路线图）
+    ↓
+教学（轻量/深度模式）
+    ↓
+验证（真的懂了吗？）
 ```
 
-### 对抗遗忘机制
+---
 
-- 学习路线图 + [m]/[~] 掌握度追踪
-- 导航提示（每 3 轮对话）
-- 即时复盘（用到旧知识时快速回忆）
-- 速查表构建（每学完一个概念群）
+## 🔍 什么时候用？
 
-## 使用方式
+### 触发关键词
 
-### Hermes Agent
+| 关键词 | 场景 |
+|-------|------|
+| "给我讲讲"、"解释一下"、"教我" | 概念教学 |
+| "这是什么意思"、"帮我理解" | 代码/工具教学 |
+| "learn"、"explain" | 英文触发 |
+| "深入理解"、"完整推导" | 深度模式 |
+| "简单说一下" | 轻量模式 |
 
-将 `SKILL.md` 复制到 `~/.hermes/skills/ai-teaching/` 目录下：
+### 不适用场景
 
-```bash
-mkdir -p ~/.hermes/skills/ai-teaching
-cp SKILL.md ~/.hermes/skills/ai-teaching/
+- 用户要的是"帮我做完"而不是"教我怎么做"
+- 用户明确说"直接给我答案"
+- 任务是纯执行型（写代码、跑命令），不需要理解
+- 用户是L5熟练开发者，只需要查一个具体API/参数
+
+---
+
+## 💡 使用示例
+
+### 示例1：概念教学（深度模式）
+```
+用户：给我讲讲什么是协整
+
+AI：[使用五步梯教学]
+Step 1（锚）：协整就像主人遛狗...
+Step 2（义）：专业地说，如果两个I(1)序列...
+Step 3（推）：我们来推导协整的检验方法...
+Step 4（例）：案例1：检验上证指数和深证指数...
+Step 5（界）：协整 vs 相关的区别...
 ```
 
-然后在对话中说 `/skill ai-teaching` 或让 AI 自动匹配。
+### 示例2：代码教学（轻量模式）
+```
+用户：CSS里的flex是什么？
 
-### Claude Code
+AI：你玩过弹簧尺吗？Flex就像一个弹簧尺...
+你项目里那个导航栏，里面的按钮为什么能均匀排开？
+我先问你一个简单的问题：你知道display: flex是写在父元素上还是子元素上？
+```
 
-将 `SKILL.md` 复制到项目的 `.claude/` 目录下，或作为 Claude Code plugin 使用。
+---
 
-### Cursor
+## 🛠️ 技能详情
 
-将 `SKILL.md` 放到项目的 `.cursorrules` 或 `.cursor/skills/` 目录下。
+| 功能 | 触发关键词 | 适用场景 | 状态 |
+|------|-----------|---------|------|
+| 概念教学 | "给我讲讲"、"解释一下" | 概念、理论、原理 | ✅ Stable |
+| 代码教学 | "这是什么意思"、"帮我理解" | 代码、工具、项目 | ✅ Stable |
+| 深度学习 | "深入理解"、"完整推导" | 需要完整五步梯 | ✅ Stable |
+| 快速解释 | "简单说一下" | 轻量模式 | ✅ Stable |
 
-## 设计来源
+---
+
+## 🌐 兼容性
+
+| Agent | 支持状态 | 安装方式 |
+|-------|---------|---------|
+| **Hermes Agent** | ✅ 完全支持 | `~/.hermes/skills/` |
+| **Claude Code** | ✅ 完全支持 | Plugin marketplace |
+| **Cursor** | ✅ 支持 | `.cursor/rules/` |
+| **Codex** | ✅ 支持 | `~/.codex/skills/` |
+| **Windsurf** | ✅ 支持 | Rules配置 |
+| **Gemini CLI** | ✅ 支持 | `~/.gemini/skills/` |
+
+---
+
+## 📖 设计来源
 
 这个 Skill 的设计融合了以下来源的教学经验：
 
@@ -76,20 +167,38 @@ cp SKILL.md ~/.hermes/skills/ai-teaching/
 - 五步教学法（概念锚定→专业定义→完整推导→实践案例→差异对比）
 - 科普作家提示词的比喻优先 + 故事化叙事方法
 
-## 文件结构
+---
 
-```
-ai-teaching-skill/
-├── SKILL.md           ← 核心 Skill 文件
-├── README.md          ← 本文件
-└── references/        ← 参考资料（待补充）
-```
+## 👨‍💻 作者
 
-## License
+**赵卓然** - 西南财经大学金融工程专业
 
-MIT
+- GitHub: [@CallMe1101](https://github.com/CallMe1101)
+- 邮箱: zhao.zr11@protonmail.com
 
-## 更新日志
+---
+
+## 🤝 贡献
+
+欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+### 如何贡献
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+---
+
+## 📄 许可证
+
+MIT License - 详见 [LICENSE](LICENSE)
+
+---
+
+## 📝 更新日志
 
 ### v0.5.0 (2026-05-17)
 
@@ -115,3 +224,11 @@ MIT
 ### v0.4.0 (2026-05-16)
 
 初始版本，包含完整的教学流程和方法论。
+
+---
+
+## 🙏 致谢
+
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent) - AI Agent框架
+- [teaching-code-to-beginners](https://github.com/NousResearch/hermes-agent/blob/main/skills/teaching-code-to-beginners) - 代码教学Skill
+- [nature-skills](https://github.com/Yuan1z0825/nature-skills) - 学术写作Skill
